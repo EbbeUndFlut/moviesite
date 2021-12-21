@@ -8,7 +8,7 @@ let images = null
  * Fetches the most popular movies from the api
  * @returns {Array} with Movie Objects
  */
-let getPopularMovies = function () {
+function getPopularMovies() {
     let response = fetch(BASE_URL + "/movie/popular?api_key=" + API_KEY + "&language=de-DE&page=1")
         .then((data) => data.json())
         .then((data) => data.results)
@@ -20,7 +20,7 @@ let getPopularMovies = function () {
  * @returns {string} Poster URL
  */
 
-let getImages = function (posterPath, size = "w400/") {
+function getImages(posterPath, size = "w400/") {
     if (images === null) {
         const getImageObject = async () => {
             let response = await fetch(BASE_URL + "/configuration?api_key=" + API_KEY)
@@ -47,15 +47,16 @@ let getImages = function (posterPath, size = "w400/") {
  * Fetches the Genre Objects
  * @returns {Array} with Genre Objects
  */
-let getGenres = function () {
+function getGenres() {
     const ENDPOINT = "/genre/movie/list"
     let response = fetch(BASE_URL + ENDPOINT + "?api_key=" + API_KEY + "&language=de-DE")
         .then((data) => data.json())
         .then((data) => data.genres)
     return response
 }
-export default {
+const MovieApi = {
     getPopularMovies,
     getGenres,
     getImages,
 }
+export default MovieApi
