@@ -1,8 +1,5 @@
 const API_KEY = "b948b67c86248a6650144335b03aede0"
 const BASE_URL = "https://api.themoviedb.org/3"
-let images = null
-// example
-// https://api.themoviedb.org/3/movie/550?api_key=b948b67c86248a6650144335b03aede0
 
 /**
  * Fetches the most popular movies from the api
@@ -23,7 +20,6 @@ function getPopularMovies() {
 function getImages(posterPath, size = "w400/") {
     return "https://image.tmdb.org/t/p/w400/" + posterPath
 }
-// https://api.themoviedb.org/3/movie/157336?api_key={api_key}&append_to_response=videos
 
 /**
  * Get the Moviedetails from the specific id
@@ -38,11 +34,17 @@ function getMovieDetails(movieId) {
 }
 
 /**
- * @todo function for moviesearch
- *
- *
- *
+ * Basic Movie only search
+ * @param {String} query
+ * @returns {Array} with Movie Objects inside
  */
+function baseSearch(query) {
+    const ENDPOINT = "/search/movie"
+    let response = fetch(BASE_URL + ENDPOINT + "?api_key=" + API_KEY + "&query=" + query)
+        .then((data) => data.json())
+        .then((data) => data.results)
+    return response
+}
 
 /**
  * Fetches the Genre Objects
@@ -58,6 +60,7 @@ function getGenres() {
 const MovieApi = {
     getPopularMovies,
     getMovieDetails,
+    baseSearch,
     getGenres,
     getImages,
 }
