@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    max-width: 1440px;
+}
+
+
+.grid {
+    background-color: #24323F;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 60px 60px;
+img {
+    width: 100%;
+}
+}
