@@ -21,18 +21,7 @@ function getPopularMovies() {
  */
 
 function getImages(posterPath, size = "w400/") {
-    // if (images === null) {
-    //     const getImageObject = async () => {
-    //         let response = await fetch(BASE_URL + "/configuration?api_key=" + API_KEY)
-    //         response = await response.json()
-    //         images = response.images
-    //         console.log(images)
-    //     }
-    //     getImageObject()
-    // }
     return "https://image.tmdb.org/t/p/w400/" + posterPath
-
-    // console.log(images.secure_base_url + size + posterPath)
 }
 // https://api.themoviedb.org/3/movie/157336?api_key={api_key}&append_to_response=videos
 /**
