@@ -1,6 +1,6 @@
 const API_KEY = "b948b67c86248a6650144335b03aede0"
 const BASE_URL = "https://api.themoviedb.org/3"
-let images = null
+// let images = null
 // example
 // https://api.themoviedb.org/3/movie/550?api_key=b948b67c86248a6650144335b03aede0
 
