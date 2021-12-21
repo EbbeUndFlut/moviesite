@@ -24,9 +24,18 @@ function getImages(posterPath, size = "w400/") {
     return "https://image.tmdb.org/t/p/w400/" + posterPath
 }
 // https://api.themoviedb.org/3/movie/157336?api_key={api_key}&append_to_response=videos
+
 /**
- * @todo function for moviedetails
+ * Get the Moviedetails from the specific id
+ * @param {Number} movieId
+ * @returns {JSON} All the Movie details with Videos
  */
+function getMovieDetails(movieId) {
+    let response = fetch(BASE_URL + "/movie/" + movieId + "?api_key=" + API_KEY + "&append_to_response=videos")
+        .then((data) => data.json())
+        .then((data) => data)
+    return response
+}
 
 /**
  * @todo function for moviesearch
@@ -48,6 +57,7 @@ function getGenres() {
 }
 const MovieApi = {
     getPopularMovies,
+    getMovieDetails,
     getGenres,
     getImages,
 }
