@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import MovieApi from "../api/MovieApi.js"
-import ReactDOM from "react-dom"
 
 const MovieDetail = () => {
     let { id } = useParams()
@@ -12,15 +11,19 @@ const MovieDetail = () => {
     //fetch
 
     useEffect(async () => {
-        const result = await MovieApi.getMovieDetails(id)
-        setx(result)
-        setImage(MovieApi.getImages(result.poster_path))
+        let fetcher = async () => {
+            const result = await MovieApi.getMovieDetails(id)
+            setx(result)
+            setImage(MovieApi.getImages(result.poster_path))
+        }
+        fetcher()
     }, [])
 
     // return
 
     return (
         <div>
+            <img src={imagePath} alt={x.title} />
             <p>More information about {x.title}</p>
             <p>Overview: {x.overview}</p>
             <p>{x.release_date}</p>
@@ -32,45 +35,3 @@ const MovieDetail = () => {
 }
 
 export default MovieDetail
-
-/* 
-class MovieDetails extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            details: {}
-        }
-    }
-
-
-    let mov = data.filter(elt => {
-        return elt.id.toString() === id.toString()
-    })
-
-
-
-    componentDidMount() {
-        let fetchDetails = async () => {
-            this.setState({ details: await MovieApi.getMovieDetails() })
-        }
-        fetchDetails()
-    }
-
-
-
-    // render() {
-    //     return (
-    //         <div>
-    //             <p>{mov[0].title}</p>
-    //             <p>{mov[0].genre}</p>
-    //             <p>{mov[0].media_type}</p>
-    //         </div>
-    //     );
-    // }
-
-
-}
-
-export default MovieDetails;
-
- */

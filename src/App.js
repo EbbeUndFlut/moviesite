@@ -3,7 +3,6 @@ import MovieList from "./pages/MovieList"
 import MovieDetail from "./pages/MovieDetail"
 import Nav from "./Components/Nav"
 import Footer from "./Components/Footer"
-import React, { Component } from "react"
 import "./App.scss"
 
 const App = () => {
