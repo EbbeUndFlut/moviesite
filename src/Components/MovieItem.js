@@ -27,11 +27,13 @@ class MovieItem extends Component {
     render() {
         return (
             <article className="movie-item">
-                <p>{this.props.vote_average}</p>
+                <p className="votes">{this.props.vote_average}</p>
                 <img src={this.state.image_path} alt="" />
                 <p>{this.props.release_date}</p>
                 <p>{this.props.genre_ids}</p>
-                <h2>{this.props.title}</h2>
+                <Link to={this.props.id}>
+                    <h2>{this.props.title}</h2>
+                </Link>
             </article>
 
             // <Link to={"./MovieDetail"}>

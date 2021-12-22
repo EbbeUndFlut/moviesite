@@ -7,14 +7,17 @@
 .Head {
     background-color: rgba(26, 38, 52, 1);
     display: flex;
-    justify-content: space-around;
-    height: 142px;
-    h1 {
-        color: white;
-        font-family: Anton;
-        font-style: regular;
-        font-size: 50px;
-    }
+    padding: 3vmax 0 3vmax 4vmax;
+      h1 {
+            font-family: "Anton", sans-serif;
+            font-size: 50px;
+            color: white;
+         
+
+            span {
+                color: #68e28d;
+            }
+        }
 }
 
 .grid {
@@ -22,23 +25,32 @@
     color: white;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    gap: 15px;
     padding: 60px 60px;
+  .movie-item{
+      position: relative;
+  }
     img {
         width: 100%;
-        cursor: pointer;
+      
     }
     .votes {
         display: inline-block;
         color: #ffffff;
         background-color: #21e18c;
-        border-radius: 50%;
+        border-radius: 60%;
         position: absolute;
+        right: 0;
+        padding: 5px;
+        margin: 5px 5px 0 0;
+        font-size: 16px;
+
+       
     }
 }
 
 h2 {
-    font-family: "Anton", sans-serif;
+    font-family: 'Roboto', sans-serif;;
     font-size: 18px;
 }
 
@@ -47,15 +59,8 @@ a {
     color: white;
 }
 
-h2 {
-    font-family: "Anton", sans-serif;
-    font-size: 18px;
-}
 
-a {
-    text-decoration: none;
-    color: white;
-}
+
 
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
@@ -71,7 +76,7 @@ footer {
 
     div:nth-of-type(1) {
         display: flex;
-        padding-left: 6vmax;
+        padding-left: 4vmax;
         align-items: center;
 
         p {

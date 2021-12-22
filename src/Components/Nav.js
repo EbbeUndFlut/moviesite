@@ -1,10 +1,11 @@
-
+import Searchbar from "./Searchbar";
 
 const Nav = () => {
     return (
         <header>      
-            <h1>.Mov</h1>
-            <div>              
+            <h1><span>.</span>MOV</h1>
+            <div>
+                      
             </div>
         </header>
     );
