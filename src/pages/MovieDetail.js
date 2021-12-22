@@ -1,32 +1,29 @@
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from "react";
-import MovieApi from '../api/MovieApi.js';
-import ReactDOM from "react-dom";
-
-
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
+import MovieApi from "../api/MovieApi.js"
+import ReactDOM from "react-dom"
 
 const MovieDetail = () => {
     let { id } = useParams()
 
     const [x, setx] = useState(0)
 
-
     //fetch
 
     useEffect(async () => {
-        const result = await MovieApi.getMovieDetails();
+        const result = await MovieApi.getMovieDetails()
         setx(result.x)
     })
-
 
     // return
 
     return (
         <div>
-            <div>{x.map(item => (
-                <p>{item.title}</p>)
-            )}</div>
-
+            <div>
+                {x.map((item) => (
+                    <p>{item.title}</p>
+                ))}
+            </div>
 
             <p>More information about {x.title}</p>
             <p>Overview: {x.overview}</p>
@@ -34,22 +31,11 @@ const MovieDetail = () => {
             <p>{x.average_voting}</p>
             <p>Watch Trailer</p>
             {/* Trailer */}
-
         </div>
-    );
+    )
 }
 
-export default MovieDetail;
-
-
-
-
-
-
-
-
-
-
+export default MovieDetail
 
 /* 
 class MovieDetails extends Component {

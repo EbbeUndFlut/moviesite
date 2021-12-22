@@ -1,14 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MovieList from "./pages/MovieList";
-import MovieDetail from "./pages/MovieDetail";
-import Footer from "./Components/Footer";
-import React, { Component } from 'react';
-import './App.scss';
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import MovieList from "./pages/MovieList"
+import MovieDetail from "./pages/MovieDetail"
+import Nav from "./Components/Nav"
+import Footer from "./Components/Footer"
+import React, { Component } from "react"
+import "./App.scss"
 
 const App = () => {
     return (
         <div>
+            <div className="Head">
+                <Nav />
+            </div>
             <Router>
                 <Routes>
                     <Route path="/" element={<MovieList />} />
@@ -17,9 +20,7 @@ const App = () => {
             </Router>
             <Footer />
         </div>
-    );
+    )
 }
 
-export default App;
-
-
+export default App
