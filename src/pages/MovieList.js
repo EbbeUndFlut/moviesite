@@ -1,4 +1,3 @@
-import React, { Component } from "react"
 import MovieItem from "../Components/MovieItem"
 import MovieApi from "../api/MovieApi.js"
 import { useEffect, useState } from "react"
@@ -14,7 +13,7 @@ const MovieList = () => {
             data.map((d) => console.log(d.poster_path))
         }
         fetcher()
-    }, [location])
+    }, [location, data])
     return (
         <div className="grid">
             {data.map((elt, i) => {

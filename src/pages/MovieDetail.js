@@ -17,7 +17,7 @@ const MovieDetail = () => {
             setImage(MovieApi.getImages(result.poster_path))
         }
         fetcher()
-    }, [])
+    }, [id])
 
     // return
 
