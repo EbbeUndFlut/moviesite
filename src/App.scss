@@ -7,7 +7,7 @@
 .Head {
     background-color: rgba(26, 38, 52, 1);
     display: flex;
-    padding: 3vmax 0 3vmax 4vmax;
+    padding: 2vmax 0 2vmax 4vmax;
       h1 {
             font-family: "Anton", sans-serif;
             font-size: 50px;
@@ -59,6 +59,42 @@ a {
     color: white;
 }
 
+.Detail {
+    background-color: #24323f;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 4vmax;
+     padding-bottom: 60px;
+    span {
+        font-weight: bold;
+    }
+    h2 {
+        padding: 37px 0;
+        font-size: 2rem;
+    }
+}
+
+.Detail2 {
+    padding-top: 12vh;
+    font-size: 30px; 
+ .first {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .second {
+   display: flex;
+     justify-content: space-between;   
+ }
+
+ .third {
+     font-size: 1.5rem;
+     width: 40%;
+ }
+}
+
+
 
 
 
@@ -105,3 +141,5 @@ footer {
         width: 50%;
     }
 }
+
+
