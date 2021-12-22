@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MovieItem from './MovieItem'
+import MovieItem from '../Components/MovieItem'
 import MovieApi from '../api/MovieApi.js'
 
 

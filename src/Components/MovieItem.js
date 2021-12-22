@@ -1,22 +1,7 @@
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { Component } from 'react';
 import MovieApi from '../api/MovieApi.js';
 
-
-/*
-const MovieItem = (props) => {
-    return (
-        <article className="movie-item">
-            <p>{props.vote_average}</p>
-            <img src={props.poster_path} alt="" />
-            <p>{props.release_date}</p>
-            <p>{props.genre_ids}</p>
-            <h2>{props.title}</h2>
-        </article>
-
-    );
-}
-export default MovieItem; */
 
 class MovieItem extends Component {
     constructor(props) {
@@ -43,7 +28,11 @@ class MovieItem extends Component {
                 <p>{this.props.release_date}</p>
                 <p>{this.props.genre_ids}</p>
                 <h2>{this.props.title}</h2>
-            </article>
+            </article>,
+
+            <Link to={"./MovieDetail"}>
+                {/* <a>Image</a> */}
+            </Link>
         );
     }
 }
