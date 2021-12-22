@@ -42,3 +42,63 @@ img {
 
 
 
+
+
+
+h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+// font-family: 'Anton', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
+
+footer {
+    display: flex;
+    background-color: #1A2634;
+    padding: 4vh 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+
+    div:nth-of-type(1) {
+        display: flex;
+        padding-left: 6vmax;
+        align-items: center;
+
+
+        p {
+            font-family: 'Anton', sans-serif;
+            font-size: 50px;
+
+            span {
+                color: #68E28D;
+            }
+        }
+
+        a {
+            font-size: 25px;
+
+            padding-left: 7vmax;
+        }
+    }
+    
+    div:nth-of-type(2) {
+        justify-content: center;
+        align-self: baseline;
+        padding-left: 19vmax;
+    }
+    
+    .logo {
+        width: 50%
+    }
+
+    }
