@@ -9,11 +9,15 @@ const MovieList = () => {
 
     useEffect(() => {
         let fetcher = async () => {
-            setData(location.state !== null ? location.state : await MovieApi.getPopularMovies())
-            data.map((d) => console.log(d.poster_path))
+            // setData(location.state !== null ? location.state : await MovieApi.getPopularMovies())
+            if (location.state !== null) setData((d) => location.state)
+            else {
+                let res = await MovieApi.getPopularMovies()
+                setData((d) => res)
+            }
         }
         fetcher()
-    }, [location, data])
+    }, [location])
     return (
         <div className="grid">
             {data.map((elt, i) => {
