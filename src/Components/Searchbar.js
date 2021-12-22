@@ -13,7 +13,7 @@ const Searchbar = () => {
                 result()
             }
         })
-    }, [])
+    }, [navigate])
     return <input type="text" name="search" />
 }
 
