@@ -1,12 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MovieList from "./pages/MovieList";
 import MovieDetail from "./pages/MovieDetail";
+import Nav from "./Components/Nav";
 import './App.scss';
 
 
 const App = () => {
     return (
         <div>
+            <div className="Head">
+                <Nav />
+            </div>
             <Router>
                 <Routes>
                     <Route path="/" element={<MovieList />} />

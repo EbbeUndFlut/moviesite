@@ -5,6 +5,21 @@
 }
 
 
+.Head {
+    background-color: rgba(26, 38, 52, 1);
+    display: flex;
+    justify-content: space-around;
+    height: 142px;
+    h1 {
+color: white;
+font-family: Anton;
+font-style:  regular;
+font-size: 50px;
+    }
+}
+
+
+
 .grid {
     background-color: #24323F;
     color: white;
@@ -14,5 +29,16 @@
     padding: 60px 60px;
 img {
     width: 100%;
+    cursor: pointer;
 }
+.votes {
+    display: inline-block;
+    color: #FFFFFF;
+     background-color: #21E18C;
+       border-radius: 50%;
+       position: absolute;
+} 
 }
+
+
+

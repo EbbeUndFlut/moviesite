@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import MovieApi from '../api/MovieApi.js';
 
 
 
