@@ -10,7 +10,7 @@ const MovieDetail = () => {
 
     //fetch
 
-    useEffect(async () => {
+    useEffect(() => {
         let fetcher = async () => {
             const result = await MovieApi.getMovieDetails(id)
             setx(result)
