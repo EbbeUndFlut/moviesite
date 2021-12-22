@@ -37,6 +37,7 @@ const MovieList = () => {
                                 title={elt.title}
                             />
                         )
+                    return null
                 })}
             </div>
         </div>
