@@ -7,23 +7,21 @@ const MovieDetail = () => {
     let { id } = useParams()
 
     const [x, setx] = useState(0)
+    const [imagePath, setImage] = useState("")
 
     //fetch
 
     useEffect(async () => {
-        const result = await MovieApi.getMovieDetails()
-        setx(result.x)
+        const result = await MovieApi.getMovieDetails(id)
+        setx(result)
+        setImage(MovieApi.getImages(result.poster_path))
+
     })
 
     // return
 
     return (
         <div>
-            <div>
-                {x.map((item) => (
-                    <p>{item.title}</p>
-                ))}
-            </div>
 
             <p>More information about {x.title}</p>
             <p>Overview: {x.overview}</p>
@@ -31,6 +29,7 @@ const MovieDetail = () => {
             <p>{x.average_voting}</p>
             <p>Watch Trailer</p>
             {/* Trailer */}
+
         </div>
     )
 }

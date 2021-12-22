@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import MovieApi from "../api/MovieApi.js"
+import { Link } from "react-router-dom"
+
 
 class MovieItem extends Component {
     constructor(props) {
@@ -16,6 +18,7 @@ class MovieItem extends Component {
         }
         fetchImageUrl()
     }
+
     componentDidUpdate(prevProps) {
         if (prevProps.poster_path !== this.props.poster_path) {
             let fetchImageUrl = async () => {
@@ -31,14 +34,11 @@ class MovieItem extends Component {
                 <img src={this.state.image_path} alt="" />
                 <p>{this.props.release_date}</p>
                 <p>{this.props.genre_ids}</p>
-                <Link to={this.props.id}>
+                <Link to={`/${this.props.id}`}>
                     <h2>{this.props.title}</h2>
                 </Link>
             </article>
 
-            // <Link to={"./MovieDetail"}>
-            //     {/* <a>Image</a> */}
-            // </Link>
         )
     }
 }
