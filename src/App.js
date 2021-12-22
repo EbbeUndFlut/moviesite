@@ -9,10 +9,10 @@ import "./App.scss"
 const App = () => {
     return (
         <div>
-            <div className="Head">
-                <Nav />
-            </div>
             <Router>
+                <div className="Head">
+                    <Nav />
+                </div>
                 <Routes>
                     <Route path="/" element={<MovieList />} />
                     <Route path="/:id" element={<MovieDetail />} />

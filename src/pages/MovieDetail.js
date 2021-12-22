@@ -15,21 +15,18 @@ const MovieDetail = () => {
         const result = await MovieApi.getMovieDetails(id)
         setx(result)
         setImage(MovieApi.getImages(result.poster_path))
-
-    })
+    }, [])
 
     // return
 
     return (
         <div>
-
             <p>More information about {x.title}</p>
             <p>Overview: {x.overview}</p>
             <p>{x.release_date}</p>
             <p>{x.average_voting}</p>
             <p>Watch Trailer</p>
             {/* Trailer */}
-
         </div>
     )
 }
