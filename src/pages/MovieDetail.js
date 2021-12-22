@@ -1,46 +1,80 @@
-// import React from "react"
-// import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
+import MovieApi from "../api/MovieApi.js"
+import ReactDOM from "react-dom"
 
-// //Link from react-router-dom
+const MovieDetail = () => {
+    let { id } = useParams()
 
-// class MovieDetails extends Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             details: {},
-//         }
-//     }
+    const [x, setx] = useState(0)
 
-//     // let { id } = useParams()
+    //fetch
 
-//     /*
-//     let mov = data.filter(elt => {
-//         return elt.id.toString() === id.toString()
-//     }) */
+    useEffect(async () => {
+        const result = await MovieApi.getMovieDetails()
+        setx(result.x)
+    })
 
-//     componentDidMount() {
-//         let fetchDetails = async () => {
-//             this.setState({ details: await MovieApi.getMovieDetails() })
-//         }
-//         fetchDetails()
-//     }
+    // return
 
-//     // render() {
-//     //     return (
-//     //         <div>
-//     //             <p>{mov[0].title}</p>
-//     //             <p>{mov[0].genre}</p>
-//     //             <p>{mov[0].media_type}</p>
-//     //         </div>
-//     //     );
-//     // }
+    return (
+        <div>
+            <div>
+                {x.map((item) => (
+                    <p>{item.title}</p>
+                ))}
+            </div>
 
-//     // title
-//     // release_date
-//     // overview
-//     // average_voting
-//     // <p>Watch Trailer</p>
-//     // Video irgendeiner Art
-// }
+            <p>More information about {x.title}</p>
+            <p>Overview: {x.overview}</p>
+            <p>{x.release_date}</p>
+            <p>{x.average_voting}</p>
+            <p>Watch Trailer</p>
+            {/* Trailer */}
+        </div>
+    )
+}
 
-// export default MovieDetails
+export default MovieDetail
+
+/* 
+class MovieDetails extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            details: {}
+        }
+    }
+
+
+    let mov = data.filter(elt => {
+        return elt.id.toString() === id.toString()
+    })
+
+
+
+    componentDidMount() {
+        let fetchDetails = async () => {
+            this.setState({ details: await MovieApi.getMovieDetails() })
+        }
+        fetchDetails()
+    }
+
+
+
+    // render() {
+    //     return (
+    //         <div>
+    //             <p>{mov[0].title}</p>
+    //             <p>{mov[0].genre}</p>
+    //             <p>{mov[0].media_type}</p>
+    //         </div>
+    //     );
+    // }
+
+
+}
+
+export default MovieDetails;
+
+ */

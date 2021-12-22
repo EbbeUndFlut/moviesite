@@ -1,10 +1,13 @@
-import Searchbar from "./Searchbar"
+
+
 const Nav = () => {
     return (
-        <nav>
-            <Searchbar />
-        </nav>
-    )
+        <header>      
+            <h1>.Mov</h1>
+            <div>              
+            </div>
+        </header>
+    );
 }
 
-export default Nav
+export default Nav;
