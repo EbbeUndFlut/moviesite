@@ -10,7 +10,7 @@ const App = () => {
             <Router>
                 <Routes>
                     <Route path="/" element={<MovieList />} />
-                    {/* <Route path="/:id" element={<MovieDetail />} /> */}
+                    <Route path="/:id" element={<MovieDetail />} />
                 </Routes>
             </Router>
         </div>

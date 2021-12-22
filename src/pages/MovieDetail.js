@@ -1,9 +1,56 @@
-import React from "react";
 import { useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 
-//Link from react-router-dom
 
 
+const MovieDetail = () => {
+    let { id } = useParams()
+
+    const [x, setx] = useState(0)
+
+
+    //fetch
+
+    useEffect(async () => {
+        const result = await MovieApi.getMovieDetails();
+        setx(result.x)
+    })
+
+
+    // return
+
+    return (
+        <div>
+            <div>{x.map(item => (
+                <p>{item.title}</p>)
+            )}</div>
+
+
+            <p>More information about {x.title}</p>
+            <p>Overview: {x.overview}</p>
+            <p>{x.release_date}</p>
+            <p>{x.average_voting}</p>
+            <p>Watch Trailer</p>
+            {/* Trailer */}
+
+        </div>
+    );
+}
+
+export default MovieDetail;
+
+
+
+
+
+
+
+
+
+
+
+/* 
 class MovieDetails extends Component {
     constructor(props) {
         super(props);
@@ -13,13 +60,10 @@ class MovieDetails extends Component {
     }
 
 
-    // let { id } = useParams()
-
-
-    /* 
     let mov = data.filter(elt => {
         return elt.id.toString() === id.toString()
-    }) */
+    })
+
 
 
     componentDidMount() {
@@ -42,16 +86,8 @@ class MovieDetails extends Component {
     // }
 
 
-
-
-    // title
-    // release_date
-    // overview
-    // average_voting
-    // <p>Watch Trailer</p>
-    // Video irgendeiner Art
 }
-
 
 export default MovieDetails;
 
+ */

@@ -27,12 +27,10 @@ class MovieItem extends Component {
                 <img src={this.state.image_path} alt="" />
                 <p>{this.props.release_date}</p>
                 <p>{this.props.genre_ids}</p>
-                <h2>{this.props.title}</h2>
-            </article>,
-
-            <Link to={"./MovieDetail"}>
-                {/* <a>Image</a> */}
-            </Link>
+                <Link to={this.props.id}>
+                    <h2>{this.props.title}</h2>
+                </Link>
+            </article>
         );
     }
 }
