@@ -8,6 +8,6 @@ You're welcome
 
 ## The happy ones behind .MOV
 
-:flamingo:
-:parrot:
-:peacock:
+:flamingo: [Julia Rinzilotti](https://github.com/JuliaRinzilotti)
+:parrot: [Akhim Bari](https://github.com/AkhimBari)
+:peacock: [Christian Peters](https://github.com/EbbeUndFlut)
