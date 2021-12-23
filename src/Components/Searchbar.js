@@ -14,7 +14,7 @@ const Searchbar = () => {
             }
         })
     }, [navigate])
-    return <input type="text" name="search" id="search" />
+    return <input type="text" name="search" id="search" placeholder="Search something here" />
 }
 
 export default Searchbar

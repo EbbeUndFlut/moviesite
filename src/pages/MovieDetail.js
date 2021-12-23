@@ -35,18 +35,21 @@ const MovieDetail = () => {
                     <p className="change">{x.release_date}</p>
                 </div>
                 <div className="second ">
-                    <h4>Genre</h4>
+                    <h4>Genres</h4>
+                    <p>Genre-Bezeichnung</p>
                 </div>
                 <div className="second ">
-                    <h4>Overview:</h4>
+                    <h4>Overview</h4>
                     <p className="text">{x.overview}</p>
                 </div>
                 <div className="second ">
                     <h4>Average Voting</h4>
                     <p className="change2">{x.vote_average}</p>
                 </div>
-                <p>Watch Trailer</p>
-                <Video embedId={videoId} />
+                <div>
+                    <h4 className="third">Watch Trailer</h4>
+                    <Video embedId={videoId} />
+                </div>
             </div>
         </div>
     )

@@ -3,9 +3,8 @@ import Searchbar from "./Searchbar"
 const Nav = () => {
     return (
         <header>
-            <h1>
-                <span>.</span>MOV
-            </h1>
+
+            <a href="/"><span>.</span>MOV</a>
             <Searchbar />
         </header>
     )

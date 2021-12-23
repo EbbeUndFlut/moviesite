@@ -4,26 +4,40 @@
     
 }
 
+// ----------------- Header -------------------
+
 header {
     display: flex;
+    align-items: center;
+
     #search{
-        margin-left: 29vmax;
-        
+        margin-left: 28vmax;
         background-color: #24323f;
         color: #68e28d;
-        border-radius: 40px;
-        width: 335px; 
+        border-radius: 10rem;
+        border-style: solid;
+        width: 25vmax; 
+        height: 3vmax;
         font-family: roboto, "Roboto";
-        font-style: regular;
-        font-size: 35px;  
-        vertical-align: top;
+        font-size: 1.4vmax;  
+        // vertical-align: top;
         line-height: 100%;
+        text-align: center;
+    }
+    a {
+        font-family: "Anton", sans-serif;
+        font-size: 50px;
+        color: white;
+
+        span {
+            color: #68e28d;
+        }
     }
 }
 
 .Head {
     background-color: rgba(26, 38, 52, 1);
-    display: flex;
+    // display: flex;
     padding: 2vmax 0 2vmax 4vmax;
       h1 {
             font-family: "Anton", sans-serif;
@@ -37,13 +51,17 @@ header {
         }
 }
 
+
+// ---------------- Landing-Page ------------------
+
+
 .grid {
     background-color: #24323f;
     color: white;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
-    padding: 60px 60px;
+    padding: 5vmax 5vmax;
   .movie-item{
       position: relative;
   }
@@ -53,14 +71,15 @@ header {
     }
     .votes {
         display: inline-block;
-        color: #ffffff;
+        color: #423d3d;
         background-color: #21e18c;
-        border-radius: 60%;
+        border-radius:60%;
         position: absolute;
         right: 0;
-        padding: 5px;
-        margin: 5px 5px 0 0;
-        font-size: 16px;
+        padding: 11px;
+        margin: 7px 7px 0 0;
+        font-size: 14px;
+        font-weight: bold;
 
        
     }
@@ -75,6 +94,10 @@ a {
     text-decoration: none;
     color: white;
 }
+
+
+
+//  ---------------- Detailseite --------------
 
 .Detail {
     background-color: #24323f;
@@ -93,31 +116,45 @@ a {
 
 .Detail2 {
     padding-top: 12vh;
-    font-size: 30px; 
-.change{
-   padding-right: 16vw;   
-}
-.change2{
-padding-right: 24vw;    
-}
- .first {
-     display: flex;
-     justify-content: space-between;
-     
- }
- .second {
-   display: flex;
-     justify-content: space-between; 
-     padding: 3vh 0;  
- }
- .text {
-     font-size: 1.6rem;
-     width: 60%;
- }
+    font-size: 1.6rem; 
+
+    // .change{
+    //     // padding-right: 16vw;   
+    // }
+
+    // .change2{
+    //     padding-right: 24vw;    
+    // }
+
+    .first {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        // display: flex;
+        // justify-content: space-between;
+    }
+
+    .second {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        // display: flex;
+        // justify-content: space-between; 
+        padding: 3vh 0;  
+    }
+
+    .third {
+        padding-bottom: 30px;
+    }
+
+    .text {
+        width: 80%;
+    }
+
 }
 
 
 
+
+// ------------- Footer ---------------
 
 
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");

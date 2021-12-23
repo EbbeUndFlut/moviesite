@@ -4,8 +4,8 @@ export const Video = ({ embedId }) =>
 (
     <div className="videoResp">
         <iframe
-            width="426"
-            height="240"
+            width="580"
+            height="320"
             src={embedId}
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
