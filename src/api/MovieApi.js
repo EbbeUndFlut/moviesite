@@ -33,7 +33,7 @@ function getVideo(videos) {
  * @returns {JSON} All the Movie details with Videos
  */
 function getMovieDetails(movieId) {
-    let response = fetch(BASE_URL + "/movie/" + movieId + "?api_key=" + API_KEY + "&language=de-DE" + "&append_to_response=videos")
+    let response = fetch(BASE_URL + "/movie/" + movieId + "?api_key=" + API_KEY + "&language=de-DE&append_to_response=videos")
         .then((data) => data.json())
         .then((data) => data)
     return response
