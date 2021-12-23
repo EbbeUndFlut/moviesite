@@ -37,15 +37,10 @@ const MovieDetail = () => {
                     <p className="change">{x.release_date}</p>
                 </div>
                 <div className="second ">
-<<<<<<< HEAD
-                    <h4>Genres</h4>
-                    <p>Genre-Bezeichnung</p>
-=======
                     <h4>Genre</h4>
                     {genres.map((elt) => {
                         return <p>{elt}</p>
                     })}
->>>>>>> 4bc91b00a18255f4bd786bd8563a6de19e5fd69f
                 </div>
                 <div className="second ">
                     <h4>Overview</h4>
