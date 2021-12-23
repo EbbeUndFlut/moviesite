@@ -21,14 +21,11 @@ function getImages(posterPath, size = "w400/") {
     return "https://image.tmdb.org/t/p/w400/" + posterPath
 }
 
-
 // ------------ Idee 2 ------------------
 
 function getVideo(videos) {
     return "https://www.youtube.com/embed/" + videos
 }
-
-
 
 /**
  * Get the Moviedetails from the specific id
@@ -36,7 +33,7 @@ function getVideo(videos) {
  * @returns {JSON} All the Movie details with Videos
  */
 function getMovieDetails(movieId) {
-    let response = fetch(BASE_URL + "/movie/" + movieId + "?api_key=" + API_KEY + "&append_to_response=videos")
+    let response = fetch(BASE_URL + "/movie/" + movieId + "?api_key=" + API_KEY + "&language=de-DE" + "&append_to_response=videos")
         .then((data) => data.json())
         .then((data) => data)
     return response
@@ -49,7 +46,7 @@ function getMovieDetails(movieId) {
  */
 function baseSearch(query) {
     const ENDPOINT = "/search/movie"
-    let response = fetch(BASE_URL + ENDPOINT + "?api_key=" + API_KEY + "&query=" + query)
+    let response = fetch(BASE_URL + ENDPOINT + "?api_key=" + API_KEY + "&language=de-DE" + "&query=" + query)
         .then((data) => data.json())
         .then((data) => data.results)
     return response

@@ -8,7 +8,7 @@ const Searchbar = () => {
         document.querySelector('input[type="text"]').addEventListener("keyup", (e) => {
             if (e.keyCode === 13) {
                 let result = async () => {
-                    navigate("/", { state: await MovieApi.baseSearch(e.target.value) })
+                    navigate("/", { state: { results: await MovieApi.baseSearch(e.target.value), query: e.target.value } })
                 }
                 result()
             }
