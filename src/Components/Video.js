@@ -3,7 +3,7 @@
 export const Video = ({ embedId }) =>
 (
     <div className="videoResp">
-        <iframe
+        <iframe className="vid"
             width="580"
             height="320"
             src={embedId}
