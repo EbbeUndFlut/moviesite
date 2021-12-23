@@ -37,10 +37,12 @@ const MovieDetail = () => {
                     <p className="change">{new Date(x.release_date).toLocaleDateString()}</p>
                 </div>
                 <div className="second ">
-                    <h4>Genre</h4>
-                    {genres.map((elt) => {
-                        return <p>{elt}</p>
-                    })}
+                    <h4>Genres</h4>
+                    <div className="genreStyle">
+                        {genres.map((elt) => {
+                            return <p>{elt}</p>
+                        })}
+                    </div>
                 </div>
                 <div className="second ">
                     <h4>Overview</h4>

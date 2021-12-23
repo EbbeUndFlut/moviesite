@@ -11,10 +11,10 @@ const Footer = () => {
             </div>
             <div>
                 <a href="http://www.instagram.com">
-                    <img src="././instagram.png" alt="logo instagram" />
+                    <img src="././instagram.png" alt="logo instagram" className="logo" />
                 </a>
-                <a href="http://www.facebook.com">
-                    <img src="././facebook.png" alt="logo facebook" />
+                <a href="http://www.facebook.com" className="logo">
+                    <img src="././facebook.png" alt="logo facebook" className="logo" />
                 </a>
             </div>
         </footer>

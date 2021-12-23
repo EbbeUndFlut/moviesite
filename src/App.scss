@@ -32,6 +32,7 @@ header {
         line-height: 100%;
         text-align: center;
     }
+
     a {
         font-family: "Anton", sans-serif;
         font-size: 50px;
@@ -58,6 +59,11 @@ header {
     }
 }
 
+.borderJoy:focus {
+    outline: none;
+    border: 3px solid #68e28d;
+}
+
 // ---------------- Landing-Page ------------------
 
 .grid {
@@ -67,9 +73,13 @@ header {
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     padding: 5vmax 5vmax;
+
     .movie-item {
         position: relative;
+        color: rgb(140, 134, 134);
+        font-size: 0.9rem;
     }
+
     img {
         width: 100%;
     }
@@ -90,6 +100,8 @@ header {
 h2 {
     font-family: "Roboto", sans-serif;
     font-size: 2vw;
+    padding-top: 0.8vmax;
+    padding-bottom: 1vmax;
 }
 
 a {
@@ -112,11 +124,15 @@ a {
         padding: 37px 0;
         font-size: 2rem;
     }
+
+    img {
+        width: 80%;
+    }
 }
 
 .Detail2 {
     padding-top: 12vh;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 
     // .change{
     //     // padding-right: 16vw;
@@ -126,6 +142,9 @@ a {
     //     padding-right: 24vw;
     // }
 
+    // .genreStyle {
+
+    // }
     .first {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -193,5 +212,121 @@ footer {
 
     .logo {
         width: 50%;
+    }
+}
+
+// ------------ Media Queries ----------------
+
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        // margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        a {
+            padding: 3.5vmax 0 2vmax 4vmax;
+        }
+        #search {
+            margin: 1.2vmax auto 5vmax auto;
+        }
+    }
+
+    .Head {
+        padding: 0;
+    }
+
+    .movie-item {
+        padding-top: 0.4vmax;
+        p {
+            font-size: 0.6rem;
+            padding-top: 0.1rem;
+        }
+        h2 {
+            font-size: 1rem;
+            padding: 0.4rem 0 1.4rem 0;
+        }
+    }
+
+    footer {
+        padding: 1vmax 0 1vmax 0;
+        align-self: baseline;
+
+        div:nth-of-type(1) {
+            padding-left: 4vmax;
+            // align-items: center;
+
+            p {
+                font-size: 1rem;
+            }
+
+            a {
+                font-size: 0.6rem;
+                padding-left: 2vmax;
+            }
+        }
+
+        div:nth-of-type(2) {
+            // justify-content: center;
+            // align-self: baseline;
+            padding-left: 5vmax;
+        }
+
+        .logo {
+            width: 20%;
+        }
+    }
+
+    // -------------------- Detailseite --------------------
+
+    .Detail {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 4vmax;
+        // padding-right: 4vmax;
+        //  padding-bottom: 60px;
+
+        h2 {
+            padding: 4vmax 0 2vmax 0;
+            font-size: 1.6rem;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .Detail2 {
+            padding-top: 2vh;
+            font-size: 1rem;
+
+            .first {
+                grid-template-columns: 1fr;
+            }
+
+            .second {
+                grid-template-columns: 1fr;
+                padding: 2vh 0;
+            }
+
+            .third {
+                padding-bottom: 30px;
+            }
+
+            .text {
+                width: 80%;
+            }
+
+            .videoResp {
+                width: 30vmax;
+            }
+
+            .vid {
+                width: auto;
+                height: auto;
+            }
+        }
     }
 }
