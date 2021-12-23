@@ -23,14 +23,31 @@ const MovieDetail = () => {
 
     // return
     return (
-        <div>
-            <img src={imagePath} alt={x.title} />
-            <p>More information about {x.title}</p>
-            <p>Overview: {x.overview}</p>
-            <p>{x.release_date}</p>
-            <p>{x.average_voting}</p>
-            <p>Watch Trailer</p>
-            <Video embedId={videoId} />
+        <div className="Detail">
+            <div>
+                <h2>{x.title}</h2>
+                <img src={imagePath} alt={x.title} />
+            </div>
+
+            <div className="Detail2">
+                <div className="first">
+                    <h4>Release Date</h4>
+                    <p className="change">{x.release_date}</p>
+                </div>
+                <div className="second ">
+                    <h4>Genre</h4>
+                </div>
+                <div className="second ">
+                    <h4>Overview:</h4>
+                    <p className="text">{x.overview}</p>
+                </div>
+                <div className="second ">
+                    <h4>Average Voting</h4>
+                    <p className="change2">{x.vote_average}</p>
+                </div>
+                <p>Watch Trailer</p>
+                <Video embedId={videoId} />
+            </div>
         </div>
     )
 }
