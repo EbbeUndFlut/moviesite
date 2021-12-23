@@ -36,6 +36,9 @@ const MovieDetail = () => {
                 </div>
                 <div className="second ">
                     <h4>Genre</h4>
+                    {x.genres.map((elt) => {
+                        return <p>{elt.name}</p>
+                    })}
                 </div>
                 <div className="second ">
                     <h4>Overview:</h4>
