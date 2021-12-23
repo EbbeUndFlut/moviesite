@@ -34,7 +34,7 @@ const MovieDetail = () => {
             <div className="Detail2">
                 <div className="first">
                     <h4>Release Date</h4>
-                    <p className="change">{x.release_date}</p>
+                    <p className="change">{new Date(x.release_date).toLocaleDateString()}</p>
                 </div>
                 <div className="second ">
                     <h4>Genre</h4>

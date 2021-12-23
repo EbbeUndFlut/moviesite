@@ -38,7 +38,7 @@ const MovieList = () => {
                             id={elt.id}
                             vote_average={elt.vote_average}
                             poster_path={elt.poster_path}
-                            release_date={elt.release_date}
+                            release_date={new Date(elt.release_date).toLocaleDateString()}
                             genres={genreList} // ['Action, 'abene', kinderhorror']
                             title={elt.title}
                         />
