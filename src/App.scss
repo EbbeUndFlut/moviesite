@@ -10,7 +10,13 @@ body {
 .searchTitle {
     color: white;
     margin: 4vh 1vmax 0 5vmax;
-    display: inline-block;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+
+    h3 {
+        font-size: 1.4rem;
+    }
 }
 // ----------------- Header -------------------
 

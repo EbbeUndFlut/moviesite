@@ -27,8 +27,8 @@ const MovieList = () => {
     }, [location])
     return (
         <div>
-            <div>
-                <h3 className="searchTitle">{title}</h3>
+            <div className="searchTitle">
+                <h3>{title}</h3>
                 <img src="./favicon-32x32.png" alt="" />
             </div>
             <div className="grid">
