@@ -7,10 +7,12 @@ const Searchbar = () => {
     useEffect(() => {
         document.querySelector('input[type="text"]').addEventListener("keyup", (e) => {
             if (e.keyCode === 13 && e.target.value.length > 0) {
+                let query = e.target.value
                 let result = async () => {
-                    navigate("/", { state: { results: await MovieApi.baseSearch(e.target.value), query: e.target.value } })
+                    navigate("/", { state: { results: await MovieApi.baseSearch(e.target.value), query: query } })
                 }
                 result()
+                e.target.value = ""
             }
         })
     }, [navigate])
