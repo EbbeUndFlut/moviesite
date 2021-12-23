@@ -24,9 +24,9 @@ const MovieList = () => {
             {data.map((elt, i) => {
                 if (elt.poster_path !== null) {
                     let genreList = []
-                    elt.genre_ids.map((id) => {
+                    elt.genre_ids.forEach((id) => {
                         genres.forEach((item) => {
-                            if (item.id == id) {
+                            if (item.id === id) {
                                 genreList.push(item.name)
                             }
                         })
