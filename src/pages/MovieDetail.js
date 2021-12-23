@@ -38,7 +38,7 @@ const MovieDetail = () => {
                 </div>
                 <div className="second ">
                     <h4>Genres</h4>
-                    <div>
+                    <div className="genreStyle">
                         {genres.map((elt) => {
                             return <p>{elt}</p>
                         })}
