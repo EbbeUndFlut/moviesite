@@ -13,7 +13,9 @@ const MovieList = () => {
             // setData(location.state !== null ? location.state : await MovieApi.getPopularMovies())
             if (location.state !== null) {
                 setData((d) => location.state.results)
-                setTitle(`Heute schauen wir einen ${location.state.query} Film.`)
+                let title = location.state.query.charAt(0).toUpperCase()
+                title = title.concat(location.state.query.slice(1))
+                setTitle(`Heute schauen wir einen ${title}-Film.`)
             } else {
                 let res = await MovieApi.getPopularMovies()
                 setData((d) => res)
@@ -25,7 +27,10 @@ const MovieList = () => {
     }, [location])
     return (
         <div>
-            <h3 className="searchTitle">{title}</h3>
+            <div>
+                <h3 className="searchTitle">{title}</h3>
+                <img src="./favicon-32x32.png" alt="" />
+            </div>
             <div className="grid">
                 {data.map((elt, i) => {
                     if (elt.poster_path !== null) {
@@ -45,7 +50,7 @@ const MovieList = () => {
                                 vote_average={elt.vote_average}
                                 poster_path={elt.poster_path}
                                 release_date={new Date(elt.release_date).toLocaleDateString()}
-                                genres={genreList} // ['Action, 'abene', kinderhorror']
+                                genres={genreList}
                                 title={elt.title}
                             />
                         )
