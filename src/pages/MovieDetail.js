@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import MovieApi from "../api/MovieApi.js"
-import ReactDOM from "react-dom"
 
 const MovieDetail = () => {
     let { id } = useParams()
@@ -11,12 +10,14 @@ const MovieDetail = () => {
 
     //fetch
 
-    useEffect(async () => {
-        const result = await MovieApi.getMovieDetails(id)
-        setx(result)
-        setImage(MovieApi.getImages(result.poster_path))
-
-    })
+    useEffect(() => {
+        let fetcher = async () => {
+            const result = await MovieApi.getMovieDetails(id)
+            setx(result)
+            setImage(MovieApi.getImages(result.poster_path))
+        }
+        fetcher()
+    }, [id])
 
     // return
 
@@ -24,73 +25,29 @@ const MovieDetail = () => {
         <div className="Detail">
             <div>
                 <h2>{x.title}</h2>
-                <img src={imagePath} alt="" />
+                <img src={imagePath} alt={x.title} />
             </div>
+
             <div className="Detail2">
                 <div className="first">
-                    <p><span>Release Date</span></p>
-                    <p>{x.release_date}</p>
+                    <h4>Release Date</h4>
+                    <p className="change">{x.release_date}</p>
                 </div>
-
-                <div className="first">
-                    <p><span>Genre</span></p>
-                    <p>{x.genre_ids}</p>
+                <div className="second ">
+                    <h4>Genre</h4>
                 </div>
-
-                <div className="second">
-                    <p><span>Overview</span></p>
-                    <p className="third">{x.overview}</p>
+                <div className="second ">
+                    <h4>Overview:</h4>
+                    <p className="text">{x.overview}</p>
                 </div>
-
-                <div className="first">
-                    <p><span>Average Voting</span></p>
-                    <p>{x.vote_average}</p>
+                <div className="second ">
+                    <h4>Average Voting</h4>
+                    <p className="change2">{x.vote_average}</p>
                 </div>
+                <p>Watch Trailer</p>
             </div>
         </div>
     )
 }
 
 export default MovieDetail
-
-/* 
-class MovieDetails extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            details: {}
-        }
-    }
-
-
-    let mov = data.filter(elt => {
-        return elt.id.toString() === id.toString()
-    })
-
-
-
-    componentDidMount() {
-        let fetchDetails = async () => {
-            this.setState({ details: await MovieApi.getMovieDetails() })
-        }
-        fetchDetails()
-    }
-
-
-
-    // render() {
-    //     return (
-    //         <div>
-    //             <p>{mov[0].title}</p>
-    //             <p>{mov[0].genre}</p>
-    //             <p>{mov[0].media_type}</p>
-    //         </div>
-    //     );
-    // }
-
-
-}
-
-export default MovieDetails;
-
- */

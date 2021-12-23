@@ -1,7 +1,24 @@
 * {
     margin: 0;
     padding: 0;
-    max-width: 1440px;
+    
+}
+
+header {
+    display: flex;
+    #search{
+        margin-left: 29vmax;
+        
+        background-color: #24323f;
+        color: #68e28d;
+        border-radius: 40px;
+        width: 335px; 
+        font-family: roboto, "Roboto";
+        font-style: regular;
+        font-size: 35px;  
+        vertical-align: top;
+        line-height: 100%;
+    }
 }
 
 .Head {
@@ -51,7 +68,7 @@
 
 h2 {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 2vw;
 }
 
 a {
@@ -65,10 +82,9 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-left: 4vmax;
+    padding-right: 4vmax;
      padding-bottom: 60px;
-    span {
-        font-weight: bold;
-    }
+   
     h2 {
         padding: 37px 0;
         font-size: 2rem;
@@ -78,19 +94,25 @@ a {
 .Detail2 {
     padding-top: 12vh;
     font-size: 30px; 
+.change{
+   padding-right: 16vw;   
+}
+.change2{
+padding-right: 24vw;    
+}
  .first {
      display: flex;
      justify-content: space-between;
+     
  }
-
  .second {
    display: flex;
-     justify-content: space-between;   
+     justify-content: space-between; 
+     padding: 3vh 0;  
  }
-
- .third {
-     font-size: 1.5rem;
-     width: 40%;
+ .text {
+     font-size: 1.6rem;
+     width: 60%;
  }
 }
 

@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import MovieApi from "../api/MovieApi.js"
 import { Link } from "react-router-dom"
-
-
 class MovieItem extends Component {
     constructor(props) {
         super(props)
@@ -38,7 +36,6 @@ class MovieItem extends Component {
                     <h2>{this.props.title}</h2>
                 </Link>
             </article>
-
         )
     }
 }
