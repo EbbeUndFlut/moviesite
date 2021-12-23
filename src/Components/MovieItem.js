@@ -31,7 +31,9 @@ class MovieItem extends Component {
                 <p className="votes">{this.props.vote_average}</p>
                 <img src={this.state.image_path} alt="" />
                 <p>{this.props.release_date}</p>
-                <p>{this.props.genre_ids}</p>
+                {this.props.genres.map((genre) => (
+                    <p>{genre}</p>
+                ))}
                 <Link to={`/${this.props.id}`}>
                     <h2>{this.props.title}</h2>
                 </Link>

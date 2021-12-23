@@ -9,6 +9,7 @@ const MovieDetail = () => {
     const [x, setx] = useState(0)
     const [imagePath, setImage] = useState("")
     const [videoId, getVideo] = useState("")
+    const [genres, setGenre] = useState([])
 
     //fetch
     useEffect(() => {
@@ -17,6 +18,7 @@ const MovieDetail = () => {
             setx(result)
             setImage(MovieApi.getImages(result.poster_path))
             getVideo(MovieApi.getVideo(result.videos.results[0].key))
+            setGenre(result.genres.map((elt) => elt.name))
         }
         fetcher()
     }, [id])
@@ -35,8 +37,15 @@ const MovieDetail = () => {
                     <p className="change">{x.release_date}</p>
                 </div>
                 <div className="second ">
+<<<<<<< HEAD
                     <h4>Genres</h4>
                     <p>Genre-Bezeichnung</p>
+=======
+                    <h4>Genre</h4>
+                    {genres.map((elt) => {
+                        return <p>{elt}</p>
+                    })}
+>>>>>>> 4bc91b00a18255f4bd786bd8563a6de19e5fd69f
                 </div>
                 <div className="second ">
                     <h4>Overview</h4>
