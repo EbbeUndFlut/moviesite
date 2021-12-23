@@ -10,7 +10,6 @@ const MovieList = () => {
     const [title, setTitle] = useState("")
     useEffect(() => {
         let fetcher = async () => {
-            // setData(location.state !== null ? location.state : await MovieApi.getPopularMovies())
             if (location.state !== null) {
                 setData((d) => location.state.results)
                 let title = location.state.query.charAt(0).toUpperCase()

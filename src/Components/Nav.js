@@ -1,10 +1,12 @@
 import Searchbar from "./Searchbar"
+import { Link } from "react-router-dom"
 
 const Nav = () => {
     return (
         <header>
-
-            <a href="/"><span>.</span>MOV</a>
+            <Link to="/">
+                <span>.</span>MOV
+            </Link>
             <Searchbar />
         </header>
     )
