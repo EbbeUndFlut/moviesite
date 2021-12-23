@@ -46,7 +46,7 @@ function getMovieDetails(movieId) {
  */
 function baseSearch(query) {
     const ENDPOINT = "/search/movie"
-    let response = fetch(BASE_URL + ENDPOINT + "?api_key=" + API_KEY + "&language=de-DE" + "&query=" + query)
+    let response = fetch(BASE_URL + ENDPOINT + "?api_key=" + API_KEY + "&language=de-DE&query=" + query)
         .then((data) => data.json())
         .then((data) => data.results)
     return response
