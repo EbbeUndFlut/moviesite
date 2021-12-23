@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom"
 const MovieList = () => {
     let location = useLocation()
     const [data, setData] = useState([])
-
+    const [genres, setGenres] = useState([])
     useEffect(() => {
         let fetcher = async () => {
             // setData(location.state !== null ? location.state : await MovieApi.getPopularMovies())
@@ -15,6 +15,7 @@ const MovieList = () => {
                 let res = await MovieApi.getPopularMovies()
                 setData((d) => res)
             }
+            setGenres(await MovieApi.getGenres())
         }
         fetcher()
     }, [location])
@@ -22,6 +23,14 @@ const MovieList = () => {
         <div className="grid">
             {data.map((elt, i) => {
                 if (elt.poster_path !== null) {
+                    let genreList = []
+                    elt.genre_ids.map((id) => {
+                        genres.forEach((item) => {
+                            if (item.id == id) {
+                                genreList.push(item.name)
+                            }
+                        })
+                    })
                     return (
                         <MovieItem
                             img={elt}
@@ -30,7 +39,7 @@ const MovieList = () => {
                             vote_average={elt.vote_average}
                             poster_path={elt.poster_path}
                             release_date={elt.release_date}
-                            genre_ids={elt.genre_ids}
+                            genres={genreList} // ['Action, 'abene', kinderhorror']
                             title={elt.title}
                         />
                     )
