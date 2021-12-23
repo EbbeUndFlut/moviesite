@@ -21,6 +21,15 @@ function getImages(posterPath, size = "w400/") {
     return "https://image.tmdb.org/t/p/w400/" + posterPath
 }
 
+
+// ------------ Idee 2 ------------------
+
+function getVideo(videos) {
+    return "https://www.youtube.com/embed/" + videos
+}
+
+
+
 /**
  * Get the Moviedetails from the specific id
  * @param {Number} movieId
@@ -63,5 +72,6 @@ const MovieApi = {
     baseSearch,
     getGenres,
     getImages,
+    getVideo,
 }
 export default MovieApi
