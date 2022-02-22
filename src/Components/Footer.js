@@ -2,7 +2,6 @@ const Footer = () => {
     return (
         <footer>
             <div>
-                {/* <img className="logo" src="././logo.png" alt="logo" /> */}
                 <p>
                     {" "}
                     <span>.</span>MOV
